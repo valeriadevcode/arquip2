@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16dp">
+
+    <!-- Botón Enviar en la parte superior derecha -->
+    <Button
+        android:id="@+id/btnEnviarRutina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enviar"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:background="@android:color/white"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp" />
+
+    <!-- ScrollView para las tarjetas de ejercicios -->
+    <ScrollView
+        android:id="@+id/scrollViewRutinas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btnEnviarRutina"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Título RUTINA -->
+            <TextView
+                android:id="@+id/tituloRutina"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RUTINA"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Tarjetas de ejercicios -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Ejemplo de una tarjeta de ejercicio (aplica esto a las demás tarjetas también) -->
+                <LinearLayout
+                    android:id="@+id/tarjetaEjercicio1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/fondoblanco"
+                    android:padding="16dp"
+                    android:layout_marginBottom="8dp">
+
+                    <!-- Nombre del ejercicio -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="Ejercicio 1"
+                        android:textSize="24sp"
+                        android:textStyle="normal|bold" />
+
+                    <!-- Imagen del ejercicio -->
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ej1"
+                        android:layout_marginBottom="8dp" />
+
+                    <!-- Etiquetas y campos para Serie y Repetición -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Serie:"
+                        android:textSize="16sp" />
+                    <EditText
+                        android:id="@+id/etSerie1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Ingresa la serie" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Repetición:"
+                        android:textSize="16sp" />
+                    <EditText
+                        android:id="@+id/etRepeticion1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Ingresa la repetición" />
+                </LinearLayout>
+
+                <!-- Aplica la misma estructura para las otras tarjetas de ejercicio (tarjetaEjercicio2, tarjetaEjercicio3, etc.) -->
+
+                <!-- Tarjeta de Ejercicio 2 -->
+                <LinearLayout
+                    android:id="@+id/tarjetaEjercicio2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/fondoblanco"
+                    android:padding="16dp"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ejercicio 2"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ej2"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Serie:"
+                        android:textSize="16sp" />
+                    <EditText
+                        android:id="@+id/etSerie2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Ingresa la serie" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Repetición:"
+                        android:textSize="16sp" />
+                    <EditText
+                        android:id="@+id/etRepeticion2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Ingresa la repetición" />
+                </LinearLayout>
+
+                <!-- Repite para las demás tarjetas... -->
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
