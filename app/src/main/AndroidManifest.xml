@@ -47,6 +47,16 @@
             android:name=".controller.activity.ListClienteActivity"
             android:exported="true" />
 
+        <!-- Agregar la actividad LoginClienteActivity -->
+        <activity
+            android:name=".controller.activity.LoginClienteActivity"
+            android:exported="true" />
+
+        <!-- Agregar datoscliente -->
+        <activity
+            android:name=".controller.activity.DatosClienteActivity"
+            android:exported="true" />
+
         <!-- Agregar la nueva actividad AsignarRutinaActivity -->
         <activity
             android:name=".controller.activity.AsignarRutinaActivity"
