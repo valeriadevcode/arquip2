@@ -1,4 +1,4 @@
-package com.example.personaltrainer.view
+package com.example.personaltrainer.controller.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,9 +7,8 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.personaltrainer.R
 import com.example.personaltrainer.controller.ClienteController
-import org.json.JSONArray
+import com.example.personaltrainer.R
 import org.json.JSONObject
 
 class ListClienteActivity : AppCompatActivity() {
@@ -24,7 +23,7 @@ class ListClienteActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_list_cliente)
+        setContentView(R.layout.view_list_cliente)
 
         // Inicializa el controlador
         clienteController = ClienteController(this)
@@ -82,7 +81,7 @@ class ListClienteActivity : AppCompatActivity() {
         // Extraer datos del cliente
         val nombre = cliente.getString("nombre")
         val telefono = cliente.getString("telefono")
-        val peso = cliente.getString("peso") // Asegúrate de que estos campos existen en tu JSON
+        val peso = cliente.getString("peso")
         val altura = cliente.getString("altura")
 
         // Crear un botón dinámicamente
@@ -100,6 +99,7 @@ class ListClienteActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+
 
         // Agregar el botón al layout
         linearLayoutClientes.addView(botonCliente)

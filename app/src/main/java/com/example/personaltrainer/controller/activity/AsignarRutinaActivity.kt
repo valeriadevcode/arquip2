@@ -1,4 +1,4 @@
-package com.example.personaltrainer.view
+package com.example.personaltrainer.controller.activity
 
 import android.content.Intent
 import android.net.Uri
@@ -19,7 +19,7 @@ class AsignarRutinaActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_asignar_rutina)
+        setContentView(R.layout.view_asignar_rutina)
 
         // Obtener el número de teléfono del Intent
         telefonoCliente = intent.getStringExtra("telefonoCliente") ?: ""
@@ -65,18 +65,17 @@ class AsignarRutinaActivity : AppCompatActivity() {
     private fun enviarRutina() {
         val rutinasAsignadas = mutableListOf<Rutina>()
 
-        for (i in 1..ejercicios.size) { // Ajusta según la cantidad de ejercicios
+        for (i in 1..ejercicios.size) {
             val serie = findViewById<EditText>(resources.getIdentifier("etSerie$i", "id", packageName)).text.toString()
             val repeticion = findViewById<EditText>(resources.getIdentifier("etRepeticion$i", "id", packageName)).text.toString()
 
             // Verificar que serie y repetición no estén vacíos
             if (serie.isNotEmpty() && repeticion.isNotEmpty()) {
-                val rutina = Rutina(repeticion.toInt(), serie.toInt()) // Crear nueva instancia de Rutina
-                rutinasAsignadas.add(rutina) // Agregar a la lista de rutinas asignadas
+                val rutina = Rutina(repeticion.toInt(), serie.toInt())
+                rutinasAsignadas.add(rutina)
             }
         }
 
-        // Aquí procesamos la rutina para enviar
         if (rutinasAsignadas.isNotEmpty()) {
             val mensaje = StringBuilder()
             mensaje.append("Rutina asignada:\n")
@@ -89,7 +88,6 @@ class AsignarRutinaActivity : AppCompatActivity() {
             intent.data = Uri.parse("https://api.whatsapp.com/send?phone=$telefonoCliente&text=${Uri.encode(mensaje.toString())}")
             startActivity(intent)
         } else {
-            // Mostrar un mensaje indicando que no se han ingresado rutinas
             Toast.makeText(this, "No hay rutinas para enviar", Toast.LENGTH_SHORT).show()
         }
     }

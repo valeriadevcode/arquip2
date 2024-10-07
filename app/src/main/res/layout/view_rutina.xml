@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Título RUTINA -->
+        <TextView
+            android:id="@+id/tituloRutina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RUTINA"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Botón Enviar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="start"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/botonEnviar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enviar"
+                android:backgroundTint="@android:color/white"
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+
+        <!-- Tarjetas de ejercicios -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Tarjeta 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/fondoblanco"
+                android:padding="16dp"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Ejercicio1"
+                    android:textSize="40sp"
+                    android:textStyle="normal|bold" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ej1"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="end">
+
+                    <!-- Label para Repeticiones -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Repeticiones:"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <!-- Campo de texto para Repeticiones -->
+                    <EditText
+                        android:id="@+id/repeticionesEjercicio1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:hint="0"
+                        android:layout_marginEnd="16dp"/>
+
+                    <!-- Label para Serie -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Serie:"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <!-- Campo de texto para Serie -->
+                    <EditText
+                        android:id="@+id/serieEjercicio1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:hint="0"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Tarjeta 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/fondoblanco"
+                android:padding="16dp"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ejercicio2"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ej2"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="end">
+
+                    <!-- Label para Repeticiones -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Repeticiones:"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <!-- Campo de texto para Repeticiones -->
+                    <EditText
+                        android:id="@+id/repeticionesEjercicio2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:hint="0"
+                        android:layout_marginEnd="16dp"/>
+
+                    <!-- Label para Serie -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Serie:"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <!-- Campo de texto para Serie -->
+                    <EditText
+                        android:id="@+id/serieEjercicio2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:hint="0"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Tarjeta 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/fondoblanco"
+                android:padding="16dp"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ejercicio3"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ej3"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="end">
+
+                    <!-- Label para Repeticiones -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Repeticiones:"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <!-- Campo de texto para Repeticiones -->
+                    <EditText
+                        android:id="@+id/repeticionesEjercicio3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:hint="0"
+                        android:layout_marginEnd="16dp"/>
+
+                    <!-- Label para Serie -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Serie:"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <!-- Campo de texto para Serie -->
+                    <EditText
+                        android:id="@+id/serieEjercicio3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:hint="0"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Tarjeta 4 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/fondoblanco"
+                android:padding="16dp"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ejercicio4"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ej4"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="end">
+
+                    <!-- Label para Repeticiones -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Repeticiones:"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <!-- Campo de texto para Repeticiones -->
+                    <EditText
+                        android:id="@+id/repeticionesEjercicio4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:hint="0"
+                        android:layout_marginEnd="16dp"/>
+
+                    <!-- Label para Serie -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Serie:"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <!-- Campo de texto para Serie -->
+                    <EditText
+                        android:id="@+id/serieEjercicio4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:hint="0"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

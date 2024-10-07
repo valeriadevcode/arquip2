@@ -1,4 +1,4 @@
-package com.example.personaltrainer.view
+package com.example.personaltrainer.controller.activity
 
 import android.os.Bundle
 import android.widget.Button
@@ -23,7 +23,7 @@ class DatosClienteActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_datos_cliente)
+        setContentView(R.layout.view_datos_cliente)
 
         // Inicializa las vistas
         nombreInput = findViewById(R.id.nombreInput) // debe coincidir con @+id/nombreInput en XML
