@@ -8,42 +8,42 @@ import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.personaltrainer.R
+import com.example.personaltrainer.controller.EjercicioController
+import com.example.personaltrainer.controller.RutinaController
 import com.example.personaltrainer.model.Ejercicio
 import com.example.personaltrainer.model.Rutina
 import android.widget.Toast
 
 class AsignarRutinaActivity : AppCompatActivity() {
 
-    private val ejercicios = mutableListOf<Ejercicio>() // Lista de ejercicios
+    private lateinit var ejercicioController: EjercicioController
+    private lateinit var rutinaController: RutinaController
     private lateinit var telefonoCliente: String // Variable para almacenar el número de teléfono del cliente
+    private var ejercicios = mutableListOf<Ejercicio>() // Lista de ejercicios
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.view_asignar_rutina)
 
+        // Inicializar controladores
+        ejercicioController = EjercicioController(this)
+        rutinaController = RutinaController(this)
+
         // Obtener el número de teléfono del Intent
         telefonoCliente = intent.getStringExtra("telefonoCliente") ?: ""
 
-        // Inicializa los ejercicios
-        cargarEjercicios()
+        // Cargar los ejercicios desde EjercicioController
+        ejercicios = ejercicioController.obtenerEjercicios().toMutableList()
 
-        // Cargar los GIFs en las tarjetas
+        // Mostrar los ejercicios en la UI
         mostrarEjercicios()
 
         // Configurar el botón de enviar
         configurarBotonEnviar()
     }
 
-    private fun cargarEjercicios() {
-        // Agrega ejercicios a la lista con sus GIFs (los GIFs deben estar en res/drawable)
-        ejercicios.add(Ejercicio("Ejercicio 1", "gif_ejercicio1"))
-        ejercicios.add(Ejercicio("Ejercicio 2", "gif_ejercicio2"))
-        ejercicios.add(Ejercicio("Ejercicio 3", "gif_ejercicio3"))
-        ejercicios.add(Ejercicio("Ejercicio 4", "gif_ejercicio4"))
-        ejercicios.add(Ejercicio("Ejercicio 5", "gif_ejercicio5"))
-    }
-
     private fun mostrarEjercicios() {
+        // Mostrar los ejercicios en la interfaz
         for (i in 1..ejercicios.size) {
             val ejercicio = ejercicios[i - 1]
             val gifId = resources.getIdentifier(ejercicio.multimedia, "drawable", packageName)
@@ -77,6 +77,12 @@ class AsignarRutinaActivity : AppCompatActivity() {
         }
 
         if (rutinasAsignadas.isNotEmpty()) {
+            // Guardar rutinas asignadas usando RutinaController
+            for (rutina in rutinasAsignadas) {
+                rutinaController.agregarRutina(rutina)
+            }
+
+            // Crear el mensaje para enviar por WhatsApp
             val mensaje = StringBuilder()
             mensaje.append("Rutina asignada:\n")
             for (i in rutinasAsignadas.indices) {

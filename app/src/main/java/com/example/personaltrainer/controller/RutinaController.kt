@@ -12,7 +12,7 @@ class RutinaController(private val context: Context) {
 
     // Método para agregar una nueva rutina
     fun agregarRutina(rutina: Rutina) {
-        val rutinas = cargarRutinas() // Cargar rutinas existentes
+        val rutinas = cargarRutinas()
 
         // Crear un objeto JSON para la nueva rutina
         val rutinaJson = JSONObject().apply {
