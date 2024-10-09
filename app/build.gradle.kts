@@ -50,6 +50,10 @@ android {
 }
 
 dependencies {
+    // Dependencias de Glide
+    implementation("com.github.bumptech.glide:glide:4.15.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.15.0")
+
     implementation("com.github.bumptech.glide:glide:4.15.0")
     implementation(libs.androidx.cardview)
     annotationProcessor("com.github.bumptech.glide:compiler:4.15.0")

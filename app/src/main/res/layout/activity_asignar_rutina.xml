@@ -69,6 +69,7 @@
 
                     <!-- Imagen del ejercicio -->
                     <ImageView
+                        android:id="@+id/ivEjercicio1"
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
                         android:scaleType="centerCrop"
@@ -120,6 +121,7 @@
                         android:layout_marginBottom="8dp" />
 
                     <ImageView
+                        android:id="@+id/ivEjercicio2"
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
                         android:scaleType="centerCrop"

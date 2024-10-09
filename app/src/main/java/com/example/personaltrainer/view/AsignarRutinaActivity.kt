@@ -3,6 +3,7 @@ package com.example.personaltrainer.view
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -11,6 +12,7 @@ import com.example.personaltrainer.R
 import com.example.personaltrainer.model.Ejercicio
 import com.example.personaltrainer.model.Rutina
 import android.widget.Toast
+import com.bumptech.glide.Glide
 
 class AsignarRutinaActivity : AppCompatActivity() {
 
@@ -38,24 +40,42 @@ class AsignarRutinaActivity : AppCompatActivity() {
         // Agrega ejercicios a la lista con sus GIFs (los GIFs deben estar en res/drawable)
         ejercicios.add(Ejercicio("Ejercicio 1", "gif_ejercicio1"))
         ejercicios.add(Ejercicio("Ejercicio 2", "gif_ejercicio2"))
-        ejercicios.add(Ejercicio("Ejercicio 3", "gif_ejercicio3"))
-        ejercicios.add(Ejercicio("Ejercicio 4", "gif_ejercicio4"))
-        ejercicios.add(Ejercicio("Ejercicio 5", "gif_ejercicio5"))
+//        ejercicios.add(Ejercicio("Ejercicio 3", "gif_ejercicio3"))
+//        ejercicios.add(Ejercicio("Ejercicio 4", "gif_ejercicio4"))
+//        ejercicios.add(Ejercicio("Ejercicio 5", "gif_ejercicio5"))
     }
 
     private fun mostrarEjercicios() {
-        for (i in 1..ejercicios.size) {
-            val ejercicio = ejercicios[i - 1]
-            val gifId = resources.getIdentifier(ejercicio.multimedia, "drawable", packageName)
+        val ejercicios = listOf(
+            Pair(R.id.ivEjercicio1, "gif_ejercicio1"),
+            Pair(R.id.ivEjercicio2, "gif_ejercicio2"),
+            // Añadir más ejercicios aquí
+        )
 
-            // Cargar el GIF correspondiente en la ImageView
-            val imageView = findViewById<ImageView>(resources.getIdentifier("ivEjercicio$i", "id", packageName))
-            imageView.setImageResource(gifId)
+        ejercicios.forEach { (imageViewId, gifName) ->
+            val gifId = resources.getIdentifier(gifName, "drawable", packageName)
+
+            // Verificar si el recurso fue encontrado
+            if (gifId != 0) {
+                val imageView = findViewById<ImageView>(imageViewId)
+                if (imageView != null) {
+                    // Usa Glide para cargar el GIF
+                    Glide.with(this)
+                        .asGif() // Indicar que es un GIF animado
+                        .load(gifId) // Cargar el GIF desde drawable
+                        .into(imageView) // Cargar el GIF en el ImageView
+                } else {
+                    Log.e("AsignarRutinaActivity", "ImageView con ID $imageViewId no encontrado")
+                }
+            } else {
+                Log.e("AsignarRutinaActivity", "GIF con nombre $gifName no encontrado")
+            }
         }
     }
 
+
     private fun configurarBotonEnviar() {
-        val botonEnviar = findViewById<Button>(R.id.botonEnviar)
+        val botonEnviar = findViewById<Button>(R.id.btnEnviarRutina)
 
         botonEnviar.setOnClickListener {
             enviarRutina()
