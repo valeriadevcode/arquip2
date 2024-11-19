@@ -1,4 +1,4 @@
-package com.example.personaltrainer.view
+package com.example.personaltrainer.controller.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.personaltrainer.R
 import com.example.personaltrainer.controller.ClienteController
-import org.json.JSONArray
 import org.json.JSONObject
 
 class ListClienteActivity : AppCompatActivity() {
@@ -24,7 +23,7 @@ class ListClienteActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_list_cliente)
+        setContentView(R.layout.view_list_cliente)
 
         // Inicializa el controlador
         clienteController = ClienteController(this)

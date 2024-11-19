@@ -1,4 +1,4 @@
-package com.example.personaltrainer.view
+package com.example.personaltrainer.controller.activity
 
 import android.os.Bundle
 import android.widget.Button
@@ -23,7 +23,7 @@ class RegistroClienteActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_registro_cliente)
+        setContentView(R.layout.view_registro_cliente)
 
         nombreCliente = findViewById(R.id.nombreCliente)
         telefonoCliente = findViewById(R.id.telefonoCliente)

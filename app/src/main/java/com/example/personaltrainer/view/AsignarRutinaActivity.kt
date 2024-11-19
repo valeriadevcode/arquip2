@@ -1,4 +1,4 @@
-package com.example.personaltrainer.view
+package com.example.personaltrainer.controller.activity
 
 import android.content.Intent
 import android.net.Uri
@@ -21,7 +21,7 @@ class AsignarRutinaActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_asignar_rutina)
+        setContentView(R.layout.view_asignar_rutina)
 
         // Obtener el número de teléfono del Intent
         telefonoCliente = intent.getStringExtra("telefonoCliente") ?: ""

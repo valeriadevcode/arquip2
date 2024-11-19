@@ -1,4 +1,4 @@
-package com.example.personaltrainer.view
+package com.example.personaltrainer.controller.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.view_main)
 
         radioGroup = findViewById(R.id.radioGroup)
         btnIniciarSesion = findViewById(R.id.btnIniciarSesion)
