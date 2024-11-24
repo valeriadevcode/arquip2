@@ -1,4 +1,4 @@
-package com.example.personaltrainer.controller.activity
+package com.example.personaltrainer.view
 
 import android.os.Bundle
 import android.widget.Button
